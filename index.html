@@ -78,14 +78,14 @@
 
             // Check if username and password are not empty
             if (username.trim() === '' || password.trim() === '') {
-                alert("masukkan username dan password ");
+                alert("Masukkan username dan password");
                 return false;
             }
 
             // Replace this conditional with actual authentication logic
             if (username === "ijal" && password === "123") {
                 // For demonstration, just redirect to a new page after successful login
-               <a href="landingpage.html"></a>
+               window.location.href = "landingpage.html";
                 return false;
             } else {
                 alert("username & password anda salah");
