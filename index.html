@@ -14,7 +14,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(kalen-emsley-98264-unsplash.jpg);
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(./Wallpaper/kalen-emsley-98264-unsplash.jpg);
             background-size: cover;
             background-position: center;
         }
@@ -71,31 +71,28 @@
         </form>
     </div>
 
-   <script>
-        function loginUser() {
-            // Simulasi autentikasi, biasanya dilakukan dengan backend
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
 
-            // Contoh sederhana: jika username dan password sesuai, redirect ke halaman lain
-            if (username === 'contoh' && password === 'password') {
-                window.location.href = 'landingpage.html';
+            // Check if username and password are not empty
+            if (username.trim() === '' || password.trim() === '') {
+                alert("masukkan username dan password ");
+                return false;
+            }
+
+            // Replace this conditional with actual authentication logic
+            if (username === "ijal" && password === "123") {
+                // For demonstration, just redirect to a new page after successful login
+                RXBGS.github.io.location.href = "landingpage.html";
+                
+                return false;
             } else {
-                alert('Login gagal. Periksa kembali username dan password.');
+                alert("username & password anda salah");
+                return false;
             }
         }
     </script>
-</head>
-<body>
-    <h2>Login</h2>
-    <form>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
-
-        <button type="button" onclick="loginUser()">Login</button>
-    </form>
 </body>
 </html>
