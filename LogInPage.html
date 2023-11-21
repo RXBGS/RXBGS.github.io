@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        h2 {text-align: center;}
+        body {
+            font-family:'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(./Wallpaper/kalen-emsley-98264-unsplash.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .login-container {
+            background-color:rgba(211, 211, 211, 0.7);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        @media (max-width: 768px) {
+            .login-container {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="return validateForm()">
+            <input type="text" id="username" name="username" placeholder="Username">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check if username and password are not empty
+            if (username.trim() === '' || password.trim() === '') {
+                alert("masukkan username dan password ");
+                return false;
+            }
+
+            // Replace this conditional with actual authentication logic
+            if (username === "ijal" && password === "123") {
+                // For demonstration, just redirect to a new page after successful login
+                window.location.href = "landingpage.html";
+                
+                return false;
+            } else {
+                alert("username & password anda salah");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
