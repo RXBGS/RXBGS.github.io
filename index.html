@@ -71,32 +71,31 @@
         </form>
     </div>
 
-    <script>
-        function validateForm() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
+   <script>
+        function loginUser() {
+            // Simulasi autentikasi, biasanya dilakukan dengan backend
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
 
-            // Check if username and password are not empty
-            if (username.trim() === '' || password.trim() === '') {
-                alert("Masukkan username dan password");
-                return false;
-            }
-
-            // Replace this conditional with actual authentication logic
-            if (username === "ijal" && password === "123") {
-                // For demonstration, just redirect to a new page after successful login
-               // window.location.href = "landingpage.html";
-                <script>
-                setTimeout(function() {
-                window.location.href = "landingpage.html";
-                }, 3000); // Redirect setelah 3 detik
-                </script>
-                return false;
+            // Contoh sederhana: jika username dan password sesuai, redirect ke halaman lain
+            if (username === 'contoh' && password === 'password') {
+                window.location.href = 'landingpage.html';
             } else {
-                alert("username & password anda salah");
-                return false;
+                alert('Login gagal. Periksa kembali username dan password.');
             }
         }
     </script>
+</head>
+<body>
+    <h2>Login</h2>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <button type="button" onclick="loginUser()">Login</button>
+    </form>
 </body>
 </html>
