@@ -86,7 +86,11 @@
             if (username === "ijal" && password === "123") {
                 // For demonstration, just redirect to a new page after successful login
                // window.location.href = "landingpage.html";
-                <meta http-equiv="refresh" content="5;url=landingpage.html">
+                <script>
+                setTimeout(function() {
+                window.location.href = "landingpage.html";
+                }, 3000); // Redirect setelah 3 detik
+                </script>
                 return false;
             } else {
                 alert("username & password anda salah");
